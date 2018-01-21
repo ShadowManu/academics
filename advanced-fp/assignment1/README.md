@@ -3,6 +3,7 @@
 The assigment consists of 3 problems:
 
 - Problem 1: basic linear regression algorithm implementation
+- Problem 2: maximum Monoid implementation, based on Eq
 
 ## Install
 
