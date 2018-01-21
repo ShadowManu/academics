@@ -1,0 +1,30 @@
+-- This file has been generated from package.yaml by hpack version 0.17.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           assignment2
+version:        0.1.0.0
+description:    Please see the README on Github at <https://github.com/ShadowManu/academics#README.md>
+homepage:       https://github.com/ShadowManu/academics#readme
+bug-reports:    https://github.com/ShadowManu/academics/issues
+author:         Manuel Pacheco
+maintainer:     manuelalejandropm@gmail.com
+copyright:      2018 Manuel Pacheco
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/ShadowManu/academics
+
+executable assignment2
+  main-is: assignment2.lhs
+  hs-source-dirs: .
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends: base >= 4.7 && < 5
+  default-language: Haskell2010
