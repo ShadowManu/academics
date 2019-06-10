@@ -1,4 +1,4 @@
-# Algorithms 2
+# Algorithms 2 (CI2692)
 
 Study and Analysis of Abstract Data Types (ADT's) and Data Structures.
 
