@@ -1,0 +1,27 @@
+name: haskinator
+version: 0.1.0.0
+github: "shadowmanu/academics"
+license: MIT
+author: "Manuel Pacheco"
+maintainer: "manuelalejandropm@gmail.com"
+copyright: "2019 Manuel Pacheco"
+
+extra-source-files:
+  - README.md
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description: Please see the README on GitHub at <https://github.com/ShadowManu/academics/blob/master/programming-languages/haskinator/README.md>
+
+dependencies:
+  - base >= 4.7 && < 5
+
+executables:
+  haskinator:
+    main: Haskinator.hs
+    source-dirs: app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N

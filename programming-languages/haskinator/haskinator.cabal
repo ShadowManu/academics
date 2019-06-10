@@ -1,0 +1,36 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 0c0752b4f1e27afc901c3003e1a28e67f7acd206739b8c0d2e102be8a3a28ac4
+
+name:           haskinator
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/ShadowManu/academics/blob/master/programming-languages/haskinator/README.md>
+homepage:       https://github.com/shadowmanu/academics#readme
+bug-reports:    https://github.com/shadowmanu/academics/issues
+author:         Manuel Pacheco
+maintainer:     manuelalejandropm@gmail.com
+copyright:      2019 Manuel Pacheco
+license:        MIT
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/shadowmanu/academics
+
+executable haskinator
+  main-is: Haskinator.hs
+  other-modules:
+      Oraculo
+      Paths_haskinator
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
