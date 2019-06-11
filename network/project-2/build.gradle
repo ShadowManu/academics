@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+mainClassName = "FSServer"
+
+task runServer(type: JavaExec) {
+  classpath sourceSets.main.runtimeClasspath
+  main = "FSServer"
+  args "-l", "4000", "-h", "localhost", "-r", "4001"
+}
+
+task runClient(type: JavaExec) {
+  classpath sourceSets.main.runtimeClasspath
+  main = "FSClient"
+  // args "arg1", "arg2"
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
