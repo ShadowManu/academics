@@ -1,0 +1,94 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Debug (Launch) - Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-DigraphHLTester<project-1>",
+      "request": "launch",
+      "mainClass": "DigraphHLTester",
+      "projectName": "project-1"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-EdgeTester<project-1>",
+      "request": "launch",
+      "mainClass": "EdgeTester",
+      "projectName": "project-1"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-MyListTester<project-1>",
+      "request": "launch",
+      "mainClass": "MyListTester",
+      "projectName": "project-1"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-ASServer<project-2>",
+      "request": "launch",
+      "mainClass": "ASServer",
+      "projectName": "project-2"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-FSClient<project-2>",
+      "request": "launch",
+      "mainClass": "FSClient",
+      "projectName": "project-2"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-FSServer<project-2>",
+      "request": "launch",
+      "mainClass": "FSServer",
+      "projectName": "project-2"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-Main<project-5>",
+      "request": "launch",
+      "mainClass": "Main",
+      "projectName": "project-5",
+      "cwd": "${workspaceFolder}/algorithms-3/project-5"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-ASServer",
+      "request": "launch",
+      "mainClass": "ASServer"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-EdgeTester",
+      "request": "launch",
+      "mainClass": "EdgeTester"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-FSClient",
+      "request": "launch",
+      "mainClass": "FSClient"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-FSServer",
+      "request": "launch",
+      "mainClass": "FSServer"
+    },
+    {
+      "type": "java",
+      "name": "Debug (Launch)-Main",
+      "request": "launch",
+      "mainClass": "Main"
+    }
+  ]
+}
