@@ -6,13 +6,6 @@ This assignment consists of 3 problems:
 - Reimplementation of LogoMachine.hs using RWS, Exception and IO (was not done, source left for reference)
 - Implementation of a task scheduler using figurative function names related to pizza (source code in `assignment2.lhs`).
 
-## Install
+Run it with `docker-compose build && docker-compose run program1`
 
-> You must have [`stack`](https://www.haskellstack.org/) installed
-```
-stack build
-```
-
-## Run
-
-> (No executables provided)
+Originally authored in May, 2016.
