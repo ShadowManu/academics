@@ -15,20 +15,22 @@ module Main (main) where
 
 import Data.Foldable hiding (mapM_)
 import Data.Monoid
+import Data.Semigroup ((<>))
 
 -- Max newtype
 newtype Max a = Max { getMax :: Maybe a }
   deriving (Show, Eq)
 
--- Monoid Instance for Max
+-- Semigroup/Monoid Instance for Max
+instance (Ord a) => Semigroup (Max a) where
+  Max Nothing <> Max Nothing = Max Nothing
+  Max Nothing <> y = y
+  x <> Max Nothing = x
+
+  Max (Just x) <> Max (Just y) = Max . Just $ max x y
+
 instance (Ord a) => Monoid (Max a) where
   mempty = Max Nothing
-
-  Max Nothing `mappend` Max Nothing = Max Nothing
-  Max Nothing `mappend` y = y
-  x `mappend` Max Nothing = x
-
-  Max (Just x) `mappend` Max (Just y) = Max . Just $ max x y
 
 -- Examples information
 type Something = Int

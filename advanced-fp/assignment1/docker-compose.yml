@@ -1,0 +1,15 @@
+version: "3"
+services:
+  problem1:
+    build: .
+    command: stack exec problem1
+    volumes:
+      - ./works.svg:/usr/src/app/works.svg
+
+  problem2:
+    build: .
+    command: stack exec problem2
+
+  problem3:
+    build: .
+    command: stack exec problem3

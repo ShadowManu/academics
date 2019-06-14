@@ -11,7 +11,7 @@ Example main to explain and verify algorithm implementation of linear regression
 module Main (main) where
 
 import Graphics.Rendering.Chart.Easy
-import Graphics.Rendering.Chart.Backend.Cairo
+import Graphics.Rendering.Chart.Backend.Diagrams
 
 import Types (Sample(Sample), x, y)
 import Constants (alpha, guess)
@@ -42,7 +42,7 @@ main = do
   putStr "\n"
 
   -- Generate the image file from iterations and (decreasing) cost
-  toFile def "works.png" $ do
+  toFile def "works.svg" $ do
     layout_title .= "Cost over iterations"
     plot (line "am" . (:[]) . map (\(x,_,y) -> (x,y)) $ results)
 
