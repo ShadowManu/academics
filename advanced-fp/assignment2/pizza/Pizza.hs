@@ -16,32 +16,48 @@ instance Show Pizza where
   show Happy = " :-D "
 
 want :: Want a -> Pizza
-want = undefined
+want (Want outer) = outer $ const Happy
 
 happy :: Want a
-happy = undefined
+happy = Want outer
+  where outer inner = Happy
 
 nomnom :: IO a -> Want a
-nomnom = undefined
+nomnom io = Want outer
+  where outer inner = Eat $ inner <$> io
 
 combo :: Want a -> Want ()
-combo = undefined
+combo w = Want outer
+  where
+    outer inner = Combo pizza1 pizza2
+      where
+        pizza1 = want w
+        pizza2 = inner ()
 
 pana :: Want a -> Want a -> Want a
-pana = undefined
+pana (Want outer1) (Want outer2) = Want outer
+  where outer inner = Combo (outer1 inner) (outer2 inner)
 
 pizzeria :: [Pizza] -> IO ()
-pizzeria = undefined
+pizzeria [] = putStrLn ""
+pizzeria ((Eat io) : ps) = io >>= \p -> pizzeria (ps ++ [p])
+pizzeria ((Combo p1 p2) : ps) = pizzeria (ps ++ [p1, p2])
+pizzeria (Happy : ps) = pizzeria ps
 
 instance Functor Want where
-  fmap f x = f <$> x
+  fmap f a = pure f <*> a
 
 instance Applicative Want where
   pure = return
+  fab <*> fa = do
+    ab <- fab
+    a <- fa
+    return $ ab a
 
 instance Monad Want where
-  return x = undefined
-  (Want f) >>= g = undefined
+  return x = happy
+  m >>= f = Want $ \inner -> getWant m $ \a -> getWant (f a) inner
+    where getWant (Want x) = x
 
 hambre :: Want ()
 hambre = pana (ponle (topping 42))
@@ -61,4 +77,7 @@ topping 69 = "t:irofr"
 ponle :: String -> Want ()
 ponle xs = mapM_ (nomnom . putChar) xs
 
-main = tengo hambre
+main = do
+  putStrLn "Start..."
+  tengo hambre >> putStrLn ""
+  putStrLn "End..."
