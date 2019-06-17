@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d37640d6abf0649e1b7cabd6352dde8c6b8c15a1916c5a771d279ca2002243fc
+-- hash: c2c1622612fecd71edb79230722f40d940e67015f490bc29a937d2ce2444168b
 
 name:           advanced-fp-assignment-two
 version:        0.1.0.0
@@ -22,6 +22,17 @@ extra-source-files:
 source-repository head
   type: git
   location: https://github.com/shadowmanu/academics
+
+executable bonus
+  main-is: Bonus.hs
+  other-modules:
+      Paths_advanced_fp_assignment_two
+  hs-source-dirs:
+      bonus
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
 
 executable pizza
   main-is: Pizza.hs

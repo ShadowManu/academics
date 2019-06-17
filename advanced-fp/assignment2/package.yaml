@@ -20,6 +20,10 @@ ghc-options:
   - -with-rtsopts=-N
 
 executables:
+  bonus:
+    main: Bonus.hs
+    source-dirs: bonus
+
   # logo:
   #   main: Logo.hs
   #   source-dirs: logo
