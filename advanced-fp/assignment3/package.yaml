@@ -1,0 +1,44 @@
+name: advanced-fp-assignment-three
+version: 0.1.0.0
+github: "shadowmanu/academics"
+license: MIT
+author: "Manuel Pacheco"
+maintainer: "manuelalejandropm@gmail.com"
+copyright: "2019 Manuel Pacheco"
+
+extra-source-files:
+  - README.md
+
+description: Please see the README on GitHub at <https://github.com/ShadowManu/academics/blob/master/programming-languages/haskinator/README.md>
+
+dependencies:
+  - base >= 4.7 && < 5
+
+ghc-options:
+  - -threaded
+  - -rtsopts
+  - -with-rtsopts=-N
+
+executables:
+  buffer:
+    main: Main.hs
+    source-dirs:
+      - buffer/app
+      - buffer/lib
+    dependencies:
+      - QuickCheck
+  # parser:
+  #   main: LiterateParser.hs
+  #   source-dirs: parser
+
+tests:
+  buffer-tests:
+    main: Main.hs
+    source-dirs:
+      - buffer/tests
+      - buffer/lib
+    dependencies:
+      - QuickCheck
+    ghc-options:
+      - -fhpc
+      - -fforce-recomp

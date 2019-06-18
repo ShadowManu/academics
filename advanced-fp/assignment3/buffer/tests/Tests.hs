@@ -16,6 +16,8 @@
 
 {-# LANGUAGE TemplateHaskell #-}
 
+module Tests where
+
 import Data.Maybe (fromJust, isNothing)
 import Test.QuickCheck
 
